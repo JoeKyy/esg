@@ -47,17 +47,17 @@
 			color: color(light);
 
 			&:hover {
-				background-color: color(light, darken);
+				background-color: color(dark, darken);
 				color: color(light);
 			}
 
 			&:disabled {
 				border: 0;
 				background: color(dark, darken);
-				color: color(light, darken);
+				color: color(dark, darken);
 
 				&:hover {
-					background-color: color(light, darken);
+					background-color: color(dark, darken);
 					color: color(light);
 				}
 			}

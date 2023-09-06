@@ -254,16 +254,16 @@ form select.error::placeholder {
   color: #ffffff;
 }
 .btn-primary-dark:hover {
-  background-color: #D4D4D4;
+  background-color: #5B5559;
   color: #ffffff;
 }
 .btn-primary-dark:disabled {
   border: 0;
   background: #5B5559;
-  color: #D4D4D4;
+  color: #5B5559;
 }
 .btn-primary-dark:disabled:hover {
-  background-color: #D4D4D4;
+  background-color: #5B5559;
   color: #ffffff;
 }
 .btn-link {
@@ -301,6 +301,146 @@ form select.error::placeholder {
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
+header {
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 80px;
+  background-color: #252525;
+}
+header .logo {
+  background-image: url("../../assets/images/sprite.png");
+  background-position: 0px -90px;
+  width: 200px;
+  height: 57px;
+  overflow: hidden;
+  text-indent: -9999px;
+  position: relative;
+  z-index: 11;
+  display: inline-flex;
+}
+header .logo a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+header .menu nav {
+  display: none;
+}
+@media (min-width: 79.9375em) {
+  header .menu nav {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+header .menu nav.nav-menu--open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: inherit;
+  width: 100%;
+  height: 100vh;
+  padding: 96px 24px;
+  background-color: #252525;
+  border-bottom: 2px solid #ffffff;
+}
+header .menu nav.nav-menu--open ul {
+  display: block;
+}
+header .menu nav.nav-menu--open ul li {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 32px;
+}
+header .menu nav.nav-menu--close {
+  position: fixed;
+  top: -1000vh;
+  left: 0;
+  z-index: 10;
+  display: inherit;
+  width: 100%;
+  height: 100vh;
+}
+header .menu nav ul {
+  font-family: "Montserrat";
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+header .menu nav ul li {
+  margin: 0 16px;
+}
+@media (min-width: 79.9375em) {
+  header .menu nav ul li.selected, header .menu nav ul li:hover {
+    position: relative;
+  }
+  header .menu nav ul li.selected:before, header .menu nav ul li:hover:before {
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    content: "";
+    position: absolute;
+    top: 48px;
+    background-color: #ffffff;
+  }
+}
+@media (max-width: 48em) {
+  header .menu nav ul li.selected a, header .menu nav ul li:hover a {
+    padding-bottom: 8px;
+    border-bottom: 3px solid #ffffff;
+  }
+}
+header .menu nav ul li.selected a:hover, header .menu nav ul li:hover a:hover {
+  text-decoration: none;
+}
+header .menu nav ul li:hover {
+  position: relative;
+}
+header .menu nav ul li a {
+  color: #ffffff;
+}
+header .menu nav ul li a:hover {
+  text-decoration: underline;
+}
+header .menu .nav-button {
+  position: relative;
+  z-index: 99999;
+  display: inherit;
+  padding: 8px;
+  background-color: #252525;
+  border: 0;
+}
+@media (min-width: 79.9375em) {
+  header .menu .nav-button {
+    display: none;
+  }
+}
+header .menu .nav-button .hamburger-box {
+  width: 24px;
+  height: 16px;
+}
+header .menu .nav-button .hamburger-inner,
+header .menu .nav-button .hamburger-inner::before,
+header .menu .nav-button .hamburger-inner::after, header .menu .nav-button.is-active .hamburger-inner, header .menu .nav-button.is-active .hamburger-inner::before, header .menu .nav-button.is-active .hamburger-inner::after {
+  width: 24px;
+  background-color: #ffffff;
+}
+header .menu .nav-button.is-active {
+  background-color: #252525;
+  transition: 0.5;
+}
+header .social--list {
+  color: #ffffff;
+}
+
 /*------------------------------------*\
     BODY
 \*------------------------------------*/
@@ -349,7 +489,8 @@ body .social--list li {
     MAIN
 \*------------------------------------*/
 main {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 200px);
+  margin-top: 80px;
 }
 
 /*------------------------------------*\
@@ -365,9 +506,13 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  height: 120px;
   background-color: #D4D4D4;
   border-top: 2px solid #252525;
+}
+@media (min-width: 79.9375em) {
+  footer {
+    height: 120px;
+  }
 }
 footer:before, footer:after {
   position: absolute;
@@ -394,7 +539,7 @@ footer:after {
 }
 footer .logo {
   background-image: url("../../assets/images/sprite.png");
-  background-position: 0px -90px;
+  background-position: -200px -90px;
   width: 100px;
   height: 50px;
   overflow: hidden;
@@ -415,7 +560,13 @@ footer nav ul {
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
+  flex-direction: column;
   margin: 0;
+}
+@media (min-width: 79.9375em) {
+  footer nav ul {
+    flex-direction: row;
+  }
 }
 footer nav ul li {
   font-family: "Montserrat";

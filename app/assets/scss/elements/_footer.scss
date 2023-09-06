@@ -1,4 +1,8 @@
 footer {
+    @include responsive(large) {
+        height: 120px;
+    }
+
     position: relative;
     overflow: hidden;
 
@@ -6,8 +10,6 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 16px;
-
-    height: 120px;
 
     background-color: color(light, darken);
     border-top: 2px solid color(dark);
@@ -53,11 +55,16 @@ footer {
 
     nav {
         ul {
+            @include responsive(large) {
+                flex-direction: row;
+            }
+
             display: flex;
             justify-content: center;
             align-items: center;
             gap: space(base);
             flex-shrink: 0;
+            flex-direction: column;
 
             margin: 0;
 
