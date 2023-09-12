@@ -1,4 +1,40 @@
 main {
     min-height: calc(100vh - 200px);
-    margin-top: 80px;
+    margin-top: 112px;
+
+    aside {
+        .sidebar {
+            &__articles {
+                img {
+                    max-width: 100%;
+                    width: 100%;
+
+                    border-radius: 0px space(base) 0px 0px;
+                }
+
+                h6 {
+                    margin-bottom: space(p);
+                }
+            }
+
+            &__ad {
+                margin: space(g) 0;
+
+                text-align: center;
+            }
+
+            &__interviews {
+                margin: space(g) 0;
+
+                img {
+                    max-width: 100%;
+                    width: 100%;
+                }
+
+                h6 {
+                    margin: space(base) 0;
+                }
+            }
+        }
+    }
 }

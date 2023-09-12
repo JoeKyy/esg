@@ -304,6 +304,7 @@ form select.error::placeholder {
 header {
   position: fixed;
   overflow: hidden;
+  z-index: 10;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -490,7 +491,29 @@ body .social--list li {
 \*------------------------------------*/
 main {
   min-height: calc(100vh - 200px);
-  margin-top: 80px;
+  margin-top: 112px;
+}
+main aside .sidebar__articles img {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0px 16px 0px 0px;
+}
+main aside .sidebar__articles h6 {
+  margin-bottom: 8px;
+}
+main aside .sidebar__ad {
+  margin: 32px 0;
+  text-align: center;
+}
+main aside .sidebar__interviews {
+  margin: 32px 0;
+}
+main aside .sidebar__interviews img {
+  max-width: 100%;
+  width: 100%;
+}
+main aside .sidebar__interviews h6 {
+  margin: 16px 0;
 }
 
 /*------------------------------------*\
