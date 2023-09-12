@@ -441,6 +441,9 @@ header .menu .nav-button.is-active {
 header .social--list {
   color: #ffffff;
 }
+header .social--list a:hover {
+  text-shadow: 0 0px 10px #ffffff;
+}
 
 /*------------------------------------*\
     BODY

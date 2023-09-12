@@ -179,6 +179,12 @@ header {
     .social {
         &--list {
             color: color(light);
+
+            a {
+                &:hover {
+                    text-shadow: 0 0px 10px color(light);
+                }
+            }
         }
     }
 }
