@@ -2,6 +2,81 @@ main {
     min-height: calc(100vh - 200px);
     margin-top: 112px;
 
+    .article {
+        &__list {
+            position: relative;
+
+            img {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            &--content {
+                position: relative;
+
+                .tag {
+                    position: absolute;
+                    top: space(p);
+                    left: (- space(base));
+
+                    display: inline-block;
+                    padding: space(s) space(m) space(s) space(g);
+
+                    background: color(dark, darken);
+                    box-shadow: 0px 4px 4px 0px fade-out($color: color(dark), $amount: 0.5);
+                    border-radius: 0px 20px 20px 0px;
+
+                    font-size: font-size(small);
+                    color: color(light);
+                }
+
+                .metadata {
+                    @include font(bold);
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    align-content: center;
+                    row-gap: 10px;
+                    flex-wrap: wrap;
+
+                    margin-top: space(base);
+                    padding: 0;
+                    list-style-type: none;
+
+                    font-size: font-size(small);
+
+                    li {
+                        padding: 0;
+                        list-style-type: none;
+                    }
+
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        align-content: center;
+                        row-gap: 10px;
+                        flex-wrap: wrap;
+
+                        padding: 0;
+                        list-style-type: none;
+
+                        li {
+                            margin: 0 space(s);
+                        }
+                    }
+                }
+
+                h2 {
+                    margin: space(gg) 0 space(p);
+
+                    font-size: font-size(large);
+                }
+            }
+        }
+    }
+
     aside {
         .sidebar {
             &__articles {

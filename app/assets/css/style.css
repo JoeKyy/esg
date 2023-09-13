@@ -496,6 +496,63 @@ main {
   min-height: calc(100vh - 200px);
   margin-top: 112px;
 }
+main .article__list {
+  position: relative;
+}
+main .article__list img {
+  max-width: 100%;
+  width: 100%;
+}
+main .article__list--content {
+  position: relative;
+}
+main .article__list--content .tag {
+  position: absolute;
+  top: 8px;
+  left: -16px;
+  display: inline-block;
+  padding: 4px 24px 4px 32px;
+  background: #5B5559;
+  box-shadow: 0px 4px 4px 0px rgba(37, 37, 37, 0.5);
+  border-radius: 0px 20px 20px 0px;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+main .article__list--content .metadata {
+  font-family: "Montserrat";
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.75rem;
+}
+main .article__list--content .metadata li {
+  padding: 0;
+  list-style-type: none;
+}
+main .article__list--content .metadata ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style-type: none;
+}
+main .article__list--content .metadata ul li {
+  margin: 0 4px;
+}
+main .article__list--content h2 {
+  margin: 48px 0 8px;
+  font-size: 1.125rem;
+}
 main aside .sidebar__articles img {
   max-width: 100%;
   width: 100%;
