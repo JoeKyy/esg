@@ -2,6 +2,71 @@ main {
     min-height: calc(100vh - 200px);
     margin-top: 112px;
 
+    .highlight {
+        &__slider {
+            figure {
+                position: relative;
+
+                &:before {
+                    @include generated-content(100%, 98%);
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    background: color(dark);
+                    opacity: 0.3;
+                }
+
+                img {
+                    max-width: 100%;
+                    width: 100%;
+                }
+
+                figcaption {
+                    position: absolute;
+                    bottom: space(g);
+                    left: space(m);
+
+                    span {
+                        @include responsive(large) {
+                            position: absolute;
+                            top: (- space(g));
+                            left: (- space(m));
+                        }
+
+                        position: absolute;
+                        top: (- space(m));
+                        left: (- space(m));
+
+                        display: inline-block;
+                        padding: space(s) space(m) space(s) space(g);
+
+                        background: color(dark, darken);
+                        box-shadow: 0px 4px 4px 0px fade-out($color: color(dark), $amount: 0.5);
+                        border-radius: 0px 20px 20px 0px;
+
+                        font-size: font-size(small);
+                        color: color(light);
+                    }
+
+                    h2 {
+                        @include responsive(large) {
+                            padding: space(base) space(base) 0 0;
+
+                            font-size: font-size(xbig);
+                        }
+
+                        padding: space(base) space(p) 0 0;
+
+                        font-size: font-size(large);
+                        color: color(light);
+                    }
+                }
+            }
+        }
+    }
+
     .article {
         &__list {
             position: relative;
@@ -68,7 +133,7 @@ main {
                     }
                 }
 
-                h2 {
+                h4 {
                     margin: space(gg) 0 space(p);
 
                     font-size: font-size(large);
