@@ -653,6 +653,10 @@ main .article__post header .social--list {
     margin: 0;
   }
 }
+main .article__post figure img {
+  max-width: 100%;
+  width: 100%;
+}
 main .article__post--content h1, main .article__post--content h2, main .article__post--content h3, main .article__post--content h4, main .article__post--content h5, main .article__post--content h6 {
   margin-top: 16px;
   margin-bottom: 8px;
