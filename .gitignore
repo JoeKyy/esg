@@ -135,7 +135,7 @@ wp-config.php
 /.htaccess
 
 # All plugins
-#/wp-content/plugins
+/wp-content/plugins
 
 # All themes
 #/wp-content/themes
