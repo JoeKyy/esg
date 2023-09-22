@@ -1,0 +1,89 @@
+h1,
+.h1 {
+    @include font(bold);
+
+    font-size: font-size(xxxbig);
+    line-height: 1.2;
+}
+
+h2,
+.h2 {
+    @include font(bold);
+
+    font-size: font-size(xbig);
+    line-height: 1.2;
+}
+
+h3,
+.h3 {
+    @include font(bold);
+
+    font-size: font-size(big);
+    line-height: 1.2;
+}
+
+h4,
+.h4 {
+    @include font(bold);
+
+    font-size: font-size(large);
+    line-height: 1.2;
+}
+
+h5,
+.h5 {
+    @include font(bold);
+
+    font-size: font-size(normal);
+    line-height: 1.2;
+}
+
+h6,
+.h6 {
+    @include font(bold);
+
+    font-size: font-size(small);
+    line-height: 1.2;
+}
+
+p {
+    @include font(base);
+
+    font-size: font-size(normal);
+    line-height: 1.2;
+}
+
+hr {
+    @include generated-content(100%, 1px);
+
+    background-color: color(light, darken);
+}
+
+ul {
+    padding-left: space(m);
+    li {
+        list-style-type: disc;
+    }
+}
+
+a {
+    color: inherit;
+
+    &:hover {
+        color: color(primary);
+        text-decoration: underline;
+    }
+}
+
+em {
+    font-style: italic
+}
+
+strong {
+    @include font(bold);
+}
+
+::selection {
+    background-color: color(primary, darker);
+    color: color(primary, lighter);
+ }

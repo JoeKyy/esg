@@ -1,0 +1,47 @@
+html {
+    @include font(base, $fallback: true);
+    @include responsive(large) {
+        -webkit-overflow-scrolling: inherit;
+        overflow-x: hidden;
+    }
+
+    width: 100%;
+
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+
+    font-size: (font-size(medium, $rem: false));
+}
+
+body {
+    @include font(base);
+    @include responsive(large) {
+        -webkit-overflow-scrolling: inherit;
+        overflow-x: inherit;
+    }
+
+    width: 100%;
+
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+
+
+    .social {
+        &--list {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: rem(10);
+            flex-shrink: 0;
+
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                font-size: font-size(xbig);
+            }
+        }
+    }
+
+}
