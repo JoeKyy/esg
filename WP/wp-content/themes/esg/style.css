@@ -762,7 +762,7 @@ main aside .sidebar__articles img {
   width: 100%;
   border-radius: 0px 16px 0px 0px;
 }
-main aside .sidebar__articles h6 {
+main aside .sidebar__articles .h6 {
   margin-bottom: 8px;
 }
 main aside .sidebar__ad {
@@ -776,7 +776,7 @@ main aside .sidebar__interviews img {
   max-width: 100%;
   width: 100%;
 }
-main aside .sidebar__interviews h6 {
+main aside .sidebar__interviews .h6 {
   margin: 16px 0;
 }
 

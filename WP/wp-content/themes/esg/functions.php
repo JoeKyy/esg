@@ -344,3 +344,58 @@ function exclude_categories_from_main_query($query) {
     }
 }
 add_action('pre_get_posts', 'exclude_categories_from_main_query');
+
+function custom_author_meta_box() {
+    add_meta_box('custom_author_meta_box', 'Informações do Autor', 'display_custom_author_meta_box', 'post', 'side', 'high');
+}
+add_action('add_meta_boxes', 'custom_author_meta_box');
+
+function display_custom_author_meta_box($post) {
+    $custom_author_name = get_post_meta($post->ID, '_custom_author_name', true);
+    $custom_author_image = get_post_meta($post->ID, '_custom_author_image', true);
+    ?>
+    <p>
+        <label>Nome do Autor:</label><br />
+        <input type="text" name="_custom_author_name" value="<?php echo esc_attr($custom_author_name); ?>" style="width:100%;" />
+    </p>
+    <p>
+        <label>Imagem do Autor:</label><br />
+        <input type="text" name="_custom_author_image" id="custom_author_image" value="<?php echo esc_url($custom_author_image); ?>" style="width:75%;" />
+        <input type="button" id="custom_author_image_button" class="button" value="Upload" />
+    </p>
+    <script>
+        jQuery(document).ready(function($) {
+            $('#custom_author_image_button').click(function(e) {
+                e.preventDefault();
+                var image = wp.media({
+                    title: 'Upload Image',
+                    multiple: false
+                }).open().on('select', function(e){
+                    var uploaded_image = image.state().get('selection').first();
+                    var image_url = uploaded_image.toJSON().url;
+                    $('#custom_author_image').val(image_url);
+                });
+            });
+        });
+    </script>
+    <?php
+}
+
+function save_custom_author_meta_box_data($post_id) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        return;
+
+    if (isset($_POST['_custom_author_name'])) {
+        update_post_meta($post_id, '_custom_author_name', sanitize_text_field($_POST['_custom_author_name']));
+    }
+
+    if (isset($_POST['_custom_author_image'])) {
+        update_post_meta($post_id, '_custom_author_image', esc_url_raw($_POST['_custom_author_image']));
+    }
+}
+add_action('save_post', 'save_custom_author_meta_box_data');
+
+function enqueue_admin_scripts() {
+    wp_enqueue_media();
+}
+add_action('admin_enqueue_scripts', 'enqueue_admin_scripts');

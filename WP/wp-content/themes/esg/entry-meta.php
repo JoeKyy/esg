@@ -2,13 +2,21 @@
     $archive_year  = get_the_time('Y');
     $archive_month = get_the_time('m');
     $archive_day   = get_the_time('d');
+
+    // Obter o nome do autor da metabox
+    $custom_author_name = get_post_meta(get_the_ID(), '_custom_author_name', true);
+
+    // Definir o link do autor
+    $author_link = $custom_author_name ? get_category_link(get_cat_ID('artigos')) : esc_url(get_author_posts_url(get_the_author_meta('ID')));
 ?>
 
 <div class="row">
     <div class="col-lg-9">
         <ul class="metadata">
             <li>
-                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a>
+                <a href="<?php echo $author_link; ?>" title="<?php echo esc_attr($custom_author_name ? $custom_author_name : get_the_author()); ?>">
+                    <?php echo $custom_author_name ? esc_html($custom_author_name) : get_the_author(); ?>
+                </a>
             </li>
             <li>
                 <ul>
@@ -18,8 +26,8 @@
                     </li>
                     <li>
                         <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>">
-                            <?php the_time( get_option( 'date_format' ) ); ?>
+                        <a href="<?php echo get_day_link($archive_year, $archive_month, $archive_day); ?>">
+                            <?php the_time(get_option('date_format')); ?>
                         </a>
                     </li>
                 </ul>
